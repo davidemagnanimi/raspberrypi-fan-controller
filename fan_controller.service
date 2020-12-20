@@ -1,0 +1,16 @@
+[Unit]
+Description=Raspberry Pi Fan controller service
+
+
+[Service]
+Type=simple
+
+Restart=always
+RestartSec=1
+
+User=rpi
+ExecStart=/usr/bin/env python3 -u /home/rpi/raspberrypi-fan-controller/fan_controller.py
+
+
+[Install]
+WantedBy=multi-user.target
